@@ -81,6 +81,11 @@ I'd say this is largely as presented in the text: "For all live births, the mean
 
 ## Chapter 4
 
+*Exercise 4-1, 4-2*
+
+- use ``chap04ex.ipynb``
+
+
 
 
 
