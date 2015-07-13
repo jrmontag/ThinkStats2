@@ -21,8 +21,13 @@ def Mode(hist):
 
     returns: value from Hist
     """
-    return 0
-
+    # we could use the Largest() method for this, but it's kind of ugly
+    #return hist.Largest(1)[0][0]
+    # alternatively, we see that inside of a Hist() object, we have an Items() method
+    #   that looks like a typical dict.iteritems() - just grab the biggest count
+    val, count = max( hist.Items(), key=itemgetter(1) ) 
+    return val
+    
 
 def AllModes(hist):
     """Returns value-freq pairs in decreasing order of frequency.
@@ -31,7 +36,8 @@ def AllModes(hist):
 
     returns: iterator of value-freq pairs
     """
-    return []
+    # use itemgetter very similarly
+    return sorted( hist.Items(), key=itemgetter(1), reverse=True ) 
 
 
 def main(script):
